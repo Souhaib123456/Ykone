@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YKONE TUNISIA | Premium Influencer Agency</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">YKONE <span class="loc">TUNISIA</span></div>
+            <ul class="nav-links">
+                <li><a href="#agency">L'Agence</a></li>
+                <li><a href="#cases">Projets</a></li>
+                <li><a href="#talents">Talents</a></li>
+                <li><a href="#contact" class="cta-contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-v2">
+        <div class="hero-content">
+            <span class="reveal">Paris • Tunis • Dubai</span>
+            <h1>L'influence comme un <em>art</em>.</h1>
+            <p>Nous connectons les marques les plus prestigieuses aux créateurs les plus inspirants de Tunisie.</p>
+        </div>
+    </section>
+
+    <section id="cases" class="cases-section">
+        <div class="section-intro">
+            <p class="tagline">Selected Case Studies</p>
+            <h2>Nos Campagnes Iconiques</h2>
+        </div>
+
+        <div class="cases-grid">
+            <div class="case-item large">
+                <div class="img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80" alt="La Badira Campaign">
+                    <div class="case-overlay">
+                        <span>Travel & Hospitality</span>
+                        <h3>L'Éveil des Sens à Hammamet</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-item">
+                <div class="img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=800&q=80" alt="Luxury Beauty">
+                    <div class="case-overlay">
+                        <span>Beauty & Fragrance</span>
+                        <h3>Essence de Carthage</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-item">
+                <div class="img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80" alt="Tunisian Fashion">
+                    <div class="case-overlay">
+                        <span>Heritage & Fashion</span>
+                        <h3>Modern Savoir-Faire</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="intelligence">
+        <div class="intel-content">
+            <h2>Data & Créativité</h2>
+            <p>Au-delà de l'esthétique, nous utilisons des outils propriétaires pour analyser l'audience réelle en Tunisie : cartographie des intérêts, détection de faux abonnés et prédiction de ROI.</p>
+            <div class="intel-stats">
+                <div class="stat"><strong>+24%</strong> <span>Engagement moyen</span></div>
+                <div class="stat"><strong>100%</strong> <span>Brand Safety</span></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2026 YKONE TUNISIA. Filiale du groupe YKONE.</p>
+            <div class="legal">Mentions Légales • Privacy Policy</div>
+        </div>
+    </footer>
+
+    <script>
+        // Animations fluides au scroll
+        ScrollReveal().reveal('.case-item', { 
+            distance: '60px', 
+            duration: 1000, 
+            easing: 'cubic-bezier(0.5, 0, 0, 1)', 
+            interval: 200 
+        });
+        ScrollReveal().reveal('.hero-content h1', { delay: 300, distance: '30px' });
+    </script>
+</body>
+</html>
