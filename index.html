@@ -3,99 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YKONE TUNISIA | Premium Influencer Agency</title>
-    <link rel="stylesheet" href="style.css">
+    <title>YKONE TUNISIA | Agence Créative d'Influence Luxe</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    
     <script src="https://unpkg.com/scrollreveal"></script>
+
+    <style>
+        :root {
+            --gold: #b38e5d;
+            --dark: #111111;
+            --light-bg: #fcfcfc;
+            --white: #ffffff;
+            --transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            padding: 25px 50px;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        nav { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px; letter-spacing: 5px; font-weight: 600;
+            text-decoration: none; color: var(--dark);
+        }
+
+        .loc { font-weight: 200; font-size: 12px; opacity: 0.5; margin-left: 8px; }
+
+        .nav-links { display: flex; list-style: none; align-items: center; }
+        .nav-links li { margin-left: 35px; }
+        .nav-links a { 
+            text-decoration: none; color: var(--dark); 
+            font-size: 11px; text-transform: uppercase; letter-spacing: 2px;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; background: var(--light-bg);
+            padding: 0 20px;
+        }
+
+        .hero-content span { font-size: 10px; letter-spacing: 6px; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+
+        .hero-content h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(45px, 7vw, 95px);
+            font-weight: 300; margin: 25px 0;
+            line-height: 1;
+        }
+
+        .hero-content h1 em { font-style: italic; font-weight: 400; }
+
+        .hero-content p { max-width: 650px; margin: 0 auto; font-weight: 300; font-size: 18px; opacity: 0.7; }
+
+        /* --- CASES GRID --- */
+        .cases-section { padding: 120px 50px; }
+        .section-intro { margin-bottom: 70px; text-align: left; }
+        .tagline { font-size: 11px; text-transform: uppercase; letter-spacing: 4px; color: var(--gold); font-weight: 600; margin-bottom: 10px; }
+        .section-intro h2 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 400; }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .case-item { position: relative; overflow: hidden; cursor: pointer; height: 500px; background: #eee; }
+        .case-item.large { grid-column: span 2; height: 700px; }
+
+        .img-wrapper { width: 100%; height: 100%; }
+        .img-wrapper img { 
+            width: 100%; height: 100%; object-fit: cover; 
+            transition: transform 2s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .case-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%;
+            padding: 50px; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: var(--white); opacity: 0; transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        .case-item:hover .case-overlay { opacity: 1; transform: translateY(0); }
+        .case-item:hover img { transform: scale(1.08); }
+
+        .case-overlay span { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; font-weight: 200; }
+        .case-overlay h3 { font-family: 'Cormorant Garamond', serif; font-size: 32px; margin-top: 12px; font-weight: 400; }
+
+        /* --- DATA SECTION --- */
+        .data-intelligence {
+            background: var(--dark); color: var(--white);
+            padding: 120px 50px; text-align: center;
+        }
+
+        .data-content { max-width: 900px; margin: 0 auto; }
+        .data-content h2 { font-family: 'Cormorant Garamond', serif; font-size: 50px; margin-bottom: 40px; font-weight: 300; }
+        
+        .stats-container {
+            display: flex; justify-content: center; gap: 80px; margin-top: 50px;
+        }
+
+        .stat-card strong { display: block; font-size: 55px; color: var(--gold); font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+        .stat-card p { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.5; margin-top: 10px; }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 80px 50px 40px; border-top: 1px solid #f0f0f0;
+            background: #fff;
+        }
+
+        .footer-grid {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            margin-bottom: 60px;
+        }
+
+        .footer-info p { font-size: 14px; opacity: 0.6; max-width: 300px; }
+        
+        .footer-bottom {
+            display: flex; justify-content: space-between;
+            font-size: 10px; text-transform: uppercase; letter-spacing: 2px;
+            opacity: 0.4; padding-top: 40px; border-top: 1px solid #f5f5f5;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .cases-grid { grid-template-columns: 1fr; }
+            .case-item.large { grid-column: span 1; height: 500px; }
+            header { padding: 20px 30px; }
+            .nav-links { display: none; }
+            .stats-container { flex-direction: column; gap: 40px; }
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <nav>
-            <div class="logo">YKONE <span class="loc">TUNISIA</span></div>
+            <a href="#" class="logo">YKONE <span class="loc">TUNISIA</span></a>
             <ul class="nav-links">
-                <li><a href="#agency">L'Agence</a></li>
                 <li><a href="#cases">Projets</a></li>
+                <li><a href="#agency">L'Agence</a></li>
                 <li><a href="#talents">Talents</a></li>
-                <li><a href="#contact" class="cta-contact">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero-v2">
+    <section class="hero">
         <div class="hero-content">
             <span class="reveal">Paris • Tunis • Dubai</span>
-            <h1>L'influence comme un <em>art</em>.</h1>
-            <p>Nous connectons les marques les plus prestigieuses aux créateurs les plus inspirants de Tunisie.</p>
+            <h1>L'influence comme <br>un <em>art de vivre</em>.</h1>
+            <p>Expertise globale, ancrage local. Nous façonnons les récits digitaux des marques les plus prestigieuses en Tunisie.</p>
         </div>
     </section>
 
     <section id="cases" class="cases-section">
         <div class="section-intro">
-            <p class="tagline">Selected Case Studies</p>
+            <p class="tagline">Selected Works</p>
             <h2>Nos Campagnes Iconiques</h2>
         </div>
 
         <div class="cases-grid">
             <div class="case-item large">
                 <div class="img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80" alt="La Badira Campaign">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80" alt="Luxe">
                     <div class="case-overlay">
-                        <span>Travel & Hospitality</span>
-                        <h3>L'Éveil des Sens à Hammamet</h3>
+                        <span>Hôtellerie de Charme</span>
+                        <h3>La Badira : Une odyssée sensorielle</h3>
                     </div>
                 </div>
             </div>
 
             <div class="case-item">
                 <div class="img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=800&q=80" alt="Luxury Beauty">
+                    <img src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=1000&q=80" alt="Beauty">
                     <div class="case-overlay">
-                        <span>Beauty & Fragrance</span>
-                        <h3>Essence de Carthage</h3>
+                        <span>Beauté & Cosmétique</span>
+                        <h3>L'Éclat Méditerranéen</h3>
                     </div>
                 </div>
             </div>
 
             <div class="case-item">
                 <div class="img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80" alt="Tunisian Fashion">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80" alt="Mode">
                     <div class="case-overlay">
-                        <span>Heritage & Fashion</span>
-                        <h3>Modern Savoir-Faire</h3>
+                        <span>Mode & Savoir-faire</span>
+                        <h3>Modern Heritage : Tunis Edition</h3>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="intelligence">
-        <div class="intel-content">
-            <h2>Data & Créativité</h2>
-            <p>Au-delà de l'esthétique, nous utilisons des outils propriétaires pour analyser l'audience réelle en Tunisie : cartographie des intérêts, détection de faux abonnés et prédiction de ROI.</p>
-            <div class="intel-stats">
-                <div class="stat"><strong>+24%</strong> <span>Engagement moyen</span></div>
-                <div class="stat"><strong>100%</strong> <span>Brand Safety</span></div>
+    <section class="data-intelligence">
+        <div class="data-content">
+            <h2>Data Intelligence & ROI</h2>
+            <p>Notre plateforme propriétaire analyse en temps réel la performance de nos campagnes. Nous transformons l'influence en résultats mesurables pour le marché Tunisien.</p>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <strong>+250</strong>
+                    <p>Talents Premium</p>
+                </div>
+                <div class="stat-card">
+                    <strong>15M</strong>
+                    <p>Audience Cumulée</p>
+                </div>
+                <div class="stat-card">
+                    <strong>4.8%</strong>
+                    <p>Taux d'engagement moyen</p>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
+        <div class="footer-grid">
+            <div class="footer-info">
+                <a href="#" class="logo" style="margin-bottom: 20px; display: block;">YKONE</a>
+                <p>Bureau de Tunis : Les Berges du Lac II, Immeuble Prestige, 1053 Tunis, Tunisie.</p>
+            </div>
+            <div class="footer-socials">
+                <p class="tagline">Follow us</p>
+                <p>Instagram • LinkedIn • TikTok</p>
+            </div>
+        </div>
         <div class="footer-bottom">
-            <p>© 2026 YKONE TUNISIA. Filiale du groupe YKONE.</p>
-            <div class="legal">Mentions Légales • Privacy Policy</div>
+            <p>© 2026 YKONE TUNISIA. All Rights Reserved.</p>
+            <p>Part of YKONE Group Paris.</p>
         </div>
     </footer>
 
     <script>
-        // Animations fluides au scroll
-        ScrollReveal().reveal('.case-item', { 
-            distance: '60px', 
-            duration: 1000, 
-            easing: 'cubic-bezier(0.5, 0, 0, 1)', 
-            interval: 200 
+        // Initialisation des animations au scroll
+        const sr = ScrollReveal({
+            distance: '50px',
+            duration: 1500,
+            easing: 'cubic-bezier(0.5, 0, 0, 1)',
+            reset: false
         });
-        ScrollReveal().reveal('.hero-content h1', { delay: 300, distance: '30px' });
+
+        sr.reveal('.hero-content h1', { delay: 200 });
+        sr.reveal('.hero-content p', { delay: 400 });
+        sr.reveal('.case-item', { interval: 200 });
+        sr.reveal('.stat-card', { interval: 150, delay: 300 });
     </script>
 </body>
 </html>
